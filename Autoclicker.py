@@ -1,14 +1,14 @@
 import time
-import threading
+import threading # For optimization
 from pynput.mouse import Button, Controller
 from pynput.keyboard import Listener, KeyCode
 
-delay = 0.001
+delay = 0.1 # CHANGE DELAY HERE (DEFAULT- 0.1) # IN MS (MILLISECONDS!!)
 button = Button.left
-start_stop_key = KeyCode(char='a')
-stop_key = KeyCode(char='b')
+start_stop_key = KeyCode(char='a') # Default start key
+stop_key = KeyCode(char='b') # Default stop key
 
-class ClickMouse(threading.Thread):
+class ClickMouse(threading.Thread): # I like classes!
     def __init__(self, delay, button):
         super(ClickMouse, self).__init__()
         self.delay = delay
